@@ -16,7 +16,15 @@
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
-        <phone:Panorama Title="{Binding LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}">
+        <phone:Panorama>
+            <phone:Panorama.Title>
+                <Grid>
+                    <TextBlock>
+                        <Run Text="{Binding LocalizedResources.MainPageTitle1, Source={StaticResource LocalizedStrings}}" Foreground="Yellow"/>
+                        <Run Text="{Binding LocalizedResources.MainPageTitle2, Source={StaticResource LocalizedStrings}}" Foreground="Red"/>
+                    </TextBlock>
+                </Grid>
+            </phone:Panorama.Title>
             <!--Panorama item one-->
             <phone:PanoramaItem Header="{Binding LocalizedResources.Favorites, Source={StaticResource LocalizedStrings}}">
                 <Grid/>

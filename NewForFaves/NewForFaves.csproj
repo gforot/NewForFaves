@@ -94,6 +94,8 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="src\localization\LocalizedStrings.cs" />
+    <Compile Include="src\model\MusicClientAPI.cs" />
+    <Compile Include="src\utils\Constants.cs" />
     <Compile Include="src\viewmodel\AboutPageViewModel.cs" />
     <Compile Include="src\viewmodel\MainPageViewModel.cs" />
     <Compile Include="src\viewmodel\SelectFavoritesViewModel.cs" />
@@ -160,6 +162,7 @@
     <Content Include="Assets\Tiles\IconicTileSmall.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="docs\text.txt" />
     <None Include="docs\todo.txt" />
     <None Include="RateMyAppGuide_v1 1.pdf" />
     <None Include="store\texts.txt" />
@@ -171,7 +174,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="src\model\" />
     <Folder Include="store\screenshots\" />
   </ItemGroup>
   <ItemGroup>
