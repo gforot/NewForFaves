@@ -140,4 +140,7 @@
   <data name="Top" xml:space="preserve">
     <value>Top</value>
   </data>
+  <data name="MainPageTitle" xml:space="preserve">
+    <value>New releases</value>
+  </data>
 </root>

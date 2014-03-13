@@ -97,6 +97,15 @@ namespace NewForFaves.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to New releases.
+        /// </summary>
+        public static string MainPageTitle {
+            get {
+                return ResourceManager.GetString("MainPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to LeftToRight.
         /// </summary>
         public static string ResourceFlowDirection {

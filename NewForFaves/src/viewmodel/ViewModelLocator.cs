@@ -51,6 +51,14 @@ namespace NewForFaves.Viewmodel
             }
         }
 
+        public SelectFavoritesViewModel SelectFavoritesViewModel
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<SelectFavoritesViewModel>();
+            }
+        }
+
         public static void Cleanup()
         {
             // TODO Clear the ViewModels

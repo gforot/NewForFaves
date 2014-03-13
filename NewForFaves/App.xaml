@@ -6,7 +6,10 @@
       <Setter Property="Foreground" Value="LemonChiffon" />
     </Style>
     <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:NewForFaves.Viewmodel" />
-  </Application.Resources>
+        <DataTemplate x:Key="itemTemplate">
+            <TextBlock Text="{Binding Name}" />
+        </DataTemplate>
+    </Application.Resources>
   <Application.ApplicationLifetimeObjects>
     <!--Required object that handles lifetime events for the application-->
     <shell:PhoneApplicationService Launching="Application_Launching" Closing="Application_Closing" Activated="Application_Activated" Deactivated="Application_Deactivated" />
