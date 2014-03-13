@@ -16,9 +16,6 @@
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
-        <Grid.Resources>
-
-        </Grid.Resources>
         <phone:Panorama Title="{Binding LocalizedResources.MainPageTitle, Source={StaticResource LocalizedStrings}}">
             <!-- Panorama item FAVORITES ARTISTS -->
             <phone:PanoramaItem Header="{Binding LocalizedResources.Favorites, Source={StaticResource LocalizedStrings}}">
