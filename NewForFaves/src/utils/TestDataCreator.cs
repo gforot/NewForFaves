@@ -13,26 +13,31 @@ namespace NewForFaves.Utils
                 {
                     Id = "Liga",
                     Name = "Luciano Ligabue",
+                    Country = "Italy"
                 },
                 new Artist
                 {
                     Id = "Pausini",
                     Name = "Laura Pausini",
+                    Country = "Italy"
                 },
                 new Artist
                 {
-                    Id = "Dalla",
-                    Name = "Lucio Dalla",
+                    Id = "Bruce",
+                    Name = "Bruce Spreengsteen",
+                    Country = "U.S.A."
                 },
                 new Artist
                 {
-                    Id = "Amoroso",
-                    Name = "Alessandra Amoroso",
+                    Id = "Amy",
+                    Name = "Amy Mc Donald",
+                    Country = "Ireland"
                 },
                 new Artist
                 {
                     Id = "Morgan",
                     Name = "Morgan dei Blu Vertigo",
+                    Country = "Italy"
                 },
             };
         }

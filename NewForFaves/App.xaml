@@ -5,11 +5,23 @@
     <Style TargetType="TextBlock" x:Key="txtBlkStyleBase">
       <Setter Property="Foreground" Value="LemonChiffon" />
     </Style>
+    <Style TargetType="TextBlock" x:Key="txtBlkStyleArtistName">
+        <Setter Property="FontSize" Value="25" />
+        <Setter Property="Foreground" Value="LightSalmon" />
+    </Style>
+    <Style TargetType="TextBlock" x:Key="txtBlkStyleArtistCountry">
+        <Setter Property="Margin" Value="5"></Setter>
+        <Setter Property="Foreground" Value="LightGreen" />
+        <Setter Property="FontSize" Value="25" />
+    </Style>
     <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:NewForFaves.Viewmodel" />
-        <DataTemplate x:Key="itemTemplate">
-            <TextBlock Text="{Binding Name}" />
-        </DataTemplate>
-    </Application.Resources>
+    <DataTemplate x:Key="itemTemplate">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="{Binding Name}" Style="{StaticResource txtBlkStyleArtistName}" />
+            <TextBlock Text="{Binding Country}" Style="{StaticResource txtBlkStyleArtistCountry}" />
+        </StackPanel>
+    </DataTemplate>
+</Application.Resources>
   <Application.ApplicationLifetimeObjects>
     <!--Required object that handles lifetime events for the application-->
     <shell:PhoneApplicationService Launching="Application_Launching" Closing="Application_Closing" Activated="Application_Activated" Deactivated="Application_Deactivated" />

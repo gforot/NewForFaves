@@ -94,8 +94,11 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="src\localization\LocalizedStrings.cs" />
+    <Compile Include="src\model\messages\Message.cs" />
     <Compile Include="src\model\MusicClientAPI.cs" />
+    <Compile Include="src\utils\Addresses.cs" />
     <Compile Include="src\utils\Constants.cs" />
+    <Compile Include="src\utils\SettingsManager.cs" />
     <Compile Include="src\utils\TestDataCreator.cs" />
     <Compile Include="src\viewmodel\AboutPageViewModel.cs" />
     <Compile Include="src\viewmodel\MainPageViewModel.cs" />

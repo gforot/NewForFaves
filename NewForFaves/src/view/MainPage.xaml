@@ -20,7 +20,12 @@
             <!-- Panorama item FAVORITES ARTISTS -->
             <phone:PanoramaItem Header="{Binding LocalizedResources.Favorites, Source={StaticResource LocalizedStrings}}">
                 <Grid>
-                    <ListBox ItemsSource="{Binding FavoritesArtists}" ItemTemplate="{StaticResource itemTemplate}" />
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Button Content="$SelectFavorites" Command="{Binding SelectFavoritesCommand}" />
+                    <ListBox Grid.Row="1" ItemsSource="{Binding FavoritesArtists}" ItemTemplate="{StaticResource itemTemplate}" />
                 </Grid>
             </phone:PanoramaItem>
 

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using GalaSoft.MvvmLight.Messaging;
+using NewForFaves.Model.Messages;
 using NewForFaves.Utils;
 using Nokia.Music;
 using Nokia.Music.Types;
@@ -13,6 +15,8 @@ namespace NewForFaves.Model
         private readonly CountryResolver _countryResolver;
 
         private ListResponse<Product> _newReleases;
+        public ListResponse<Artist> Artists { get; private set; }
+        public ListResponse<Artist> TopArtists { get; private set; } 
 
         #region Singleton Instance
         private static MusicClientAPI _instance;
@@ -38,7 +42,12 @@ namespace NewForFaves.Model
 
         public async Task<bool> Init()
         {
-            _newReleases =  await _musicClient.GetNewReleasesAsync(Category.Album | Category.Single | Category.Track);
+            _newReleases =  await _musicClient.GetNewReleasesAsync(Category.Track);
+            Artists = await GetArtistsAsync();
+            TopArtists = await GetTopArtistsAsync(100);
+
+            Messenger.Default.Send(new Message(Message.InitMainViewModel));
+
             return _newReleases.Succeeded;
         }
 
@@ -49,7 +58,8 @@ namespace NewForFaves.Model
 
         public async Task<ListResponse<Artist>> GetArtistsAsync()
         {
-            return await _musicClient.SearchArtistsAsync("*");
+            ListResponse<Artist> artists = await _musicClient.SearchArtistsAsync("luciano");
+            return artists;
         }
 
         public List<Product> GetNewReleasesByArtist(Artist artist)
@@ -67,6 +77,5 @@ namespace NewForFaves.Model
             }
             return retValue;
         }
-
     }
 }
