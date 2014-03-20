@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6D2865D5-233F-4298-BD05-3A55EA0A9C78}</ProjectGuid>
+    <ProjectGuid>{56A63702-887B-4BFA-80BC-7D34AB3D48A4}</ProjectGuid>
     <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -93,22 +93,17 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="src\localization\LocalizedStrings.cs" />
-    <Compile Include="src\model\messages\Message.cs" />
-    <Compile Include="src\model\MusicClientAPI.cs" />
-    <Compile Include="src\utils\Addresses.cs" />
+    <Compile Include="LocalizedStrings.cs" />
+    <Compile Include="src\model\Addresses.cs" />
+    <Compile Include="src\model\MixRadioApi.cs" />
     <Compile Include="src\utils\Constants.cs" />
-    <Compile Include="src\utils\SettingsManager.cs" />
-    <Compile Include="src\utils\TestDataCreator.cs" />
-    <Compile Include="src\viewmodel\AboutPageViewModel.cs" />
-    <Compile Include="src\viewmodel\MainPageViewModel.cs" />
-    <Compile Include="src\viewmodel\SelectFavoritesViewModel.cs" />
-    <Compile Include="src\viewmodel\ViewModelCommon.cs" />
-    <Compile Include="src\viewmodel\ViewModelLocator.cs" />
-    <Compile Include="src\view\AboutPage.xaml.cs">
+    <Compile Include="src\viewmodels\MainPageViewModel.cs" />
+    <Compile Include="src\viewmodels\SearchArtistViewModel.cs" />
+    <Compile Include="src\viewmodels\ViewModelCommon.cs" />
+    <Compile Include="src\views\AboutPage.xaml.cs">
       <DependentUpon>AboutPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="src\view\MainPage.xaml.cs">
+    <Compile Include="src\views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -117,24 +112,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
-    <Compile Include="src\view\SelectFavoritesPage.xaml.cs">
-      <DependentUpon>SelectFavoritesPage.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="src\viewmodels\ViewModelLocator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
-    <Page Include="src\view\AboutPage.xaml">
+    <Page Include="src\views\AboutPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="src\view\MainPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="src\view\SelectFavoritesPage.xaml">
+    <Page Include="src\views\MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -145,6 +134,7 @@
     <None Include="Properties\WMAppManifest.xml">
       <SubType>Designer</SubType>
     </None>
+    <None Include="RateMyAppGuide_v1 1.pdf" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\AlignmentGrid.png" />
@@ -160,25 +150,12 @@
     <Content Include="Assets\Tiles\FlipCycleTileSmall.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\Tiles\IconicTileMediumLarge.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Tiles\IconicTileSmall.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <None Include="docs\text.txt" />
-    <None Include="docs\todo.txt" />
-    <None Include="RateMyAppGuide_v1 1.pdf" />
-    <None Include="store\texts.txt" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\AppResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="store\screenshots\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Cimbalino.Phone.Toolkit">
@@ -193,7 +170,6 @@
     <Reference Include="GalaSoft.MvvmLight.WP8">
       <HintPath>..\packages\MvvmLightLibs.4.2.30.0\lib\wp8\GalaSoft.MvvmLight.WP8.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmLightLibs.4.2.30.0\lib\wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
@@ -213,6 +189,7 @@
       <HintPath>..\packages\MvvmLightLibs.4.2.30.0\lib\wp8\System.Windows.Interactivity.dll</HintPath>
     </Reference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

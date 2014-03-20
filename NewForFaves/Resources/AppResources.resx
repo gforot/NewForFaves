@@ -134,13 +134,23 @@
   <data name="AppBarMenuItemText" xml:space="preserve">
     <value>Menu Item</value>
   </data>
-  <data name="Favorites" xml:space="preserve">
-    <value>Favorites</value>
+  <data name="AboutPageTitle" xml:space="preserve">
+    <value>About</value>
   </data>
-  <data name="Top" xml:space="preserve">
-    <value>Top</value>
+  <data name="AboutText" xml:space="preserve">
+    <value>This application allow you to search for the new releases of an artist using Nokia Mix Radio.
+Search a specific artists or select on of your favorite artists or from a list of "top" artists and get its new releases.</value>
+  </data>
+  <data name="SearchArtistPivotPage" xml:space="preserve">
+    <value>Search Artist</value>
+  </data>
+  <data name="PivotPage2" xml:space="preserve">
+    <value>Page 2</value>
   </data>
   <data name="MainPageTitle" xml:space="preserve">
-    <value>New releases</value>
+    <value>Main Page</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
   </data>
 </root>

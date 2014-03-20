@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{6d2865d5-233f-4298-bd05-3a55ea0a9c78}" Title="NewForFaves" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="NewForFaves author" Description="Sample description" Publisher="NewForFaves" PublisherID="{25695bbb-9fd5-4d0e-a395-6e1e3fbfe136}">
+  <App xmlns="" ProductID="{56a63702-887b-4bfa-80bc-7d34ab3d48a4}" Title="NewForFaves" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="NewForFaves author" Description="Sample description" Publisher="NewForFaves" PublisherID="{d4fe0f09-d959-4b38-8d04-ac935ed3c80d}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
@@ -11,7 +11,7 @@
       <Capability Name="ID_CAP_WEBBROWSERCOMPONENT" />
     </Capabilities>
     <Tasks>
-      <DefaultTask Name="_default" NavigationPage="src\view\MainPage.xaml" />
+      <DefaultTask Name="_default" NavigationPage="/src/views/MainPage.xaml" ActivationPolicy="Resume" />
     </Tasks>
     <Tokens>
       <PrimaryToken TokenID="NewForFavesToken" TaskName="_default">

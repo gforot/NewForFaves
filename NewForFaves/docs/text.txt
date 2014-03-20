@@ -1,10 +1,10 @@
 Summary:
-
 Use the features of the Nokia MixRadio APIs to create a list of new releases for a user’s favorite or top artists.
 
 Conditions:
-
-Using the Nokia MixRadio APIs, create an app that enables users to find new releases from their favorite or top artists. The user should be able to search for an artist and see a list of new releases or select from their top artists list to check for new releases.
+Using the Nokia MixRadio APIs, create an app that enables users to find new releases from their favorite or top artists. 
+The user should be able to search for an artist and see a list of new releases or select from their top artists list to check 
+for new releases.
 
 Your app must make use of Nokia MixRadio APIs, work on Windows Phone 8, and provide the following features:
 
@@ -16,10 +16,13 @@ In addition to the specific challenge features, your app must:
 
 Employ Fast App Switching. 
 Include all three sizes of Live Tiles.
-Include a Primary or Secondary Live Tile, which must flip; cycle; animate; count; or update in any manner with data; images; or text. The tile animation must start as soon as the tile is pinned and any secondary tile must be available from the main Application Bar.
+Include a Primary or Secondary Live Tile, which must flip; cycle; animate; count; or update in any manner with data; 
+images; or text. 
+The tile animation must start as soon as the tile is pinned and any secondary tile must be available from the main Application Bar.
 Follow the Windows Phone Design Language.
 Support ALL Windows Phone 8 screen resolutions.
-Your app should be made available only in those countries that offer the Nokia Music service. At the time of writing the countries supporting Nokia Music are:
+Your app should be made available only in those countries that offer the Nokia Music service. At the time of writing the countries 
+supporting Nokia Music are:
 
 Australia
 Austria
@@ -52,16 +55,22 @@ UAE
 UK
 USA
 Vietnam 
-You can earn XP for one app only in this challenge, once you have earned XP once you’ll no longer be able to submit apps to this challenge.
+You can earn XP for one app only in this challenge, once you have earned XP once you’ll no longer be able to submit apps to 
+this challenge.
 
-Apps submitted to this challenge must be NEW and first published on the Windows Phone Store after the Challenge’s start date but before the Challenge’s end date. The app must be new and not previously published in a similar form.
+Apps submitted to this challenge must be NEW and first published on the Windows Phone Store after the Challenge’s start date 
+but before the Challenge’s end date. The app must be new and not previously published in a similar form.
 
 Apps submitted to this challenge must include an English language localization and be available in the US store.
 
-Apps submitted to this challenge and awarded XP will not be accepted for any other New App or New Game challenge, but may be resubmitted for Update and Quality challenges.
+Apps submitted to this challenge and awarded XP will not be accepted for any other New App or New Game challenge, but may 
+be resubmitted for Update and Quality challenges.
 
-Apps submitted to this challenge must be your original work. If you incorporate other software to create your apps, you must comply with the terms and conditions applying to the use of that other software. 
+Apps submitted to this challenge must be your original work. If you incorporate other software to create your apps, you must 
+comply with the terms and conditions applying to the use of that other software. 
 
 Make your app stand out from the crowd in the app store by incorporating unique or differentiating features in it. 
 
-Please remember to allow time for your apps to be published in Windows Phone Store and show on DVLUP.com. You are responsible for ensuring that your apps are submitted on time. There will be no time extension to this challenge.
+Please remember to allow time for your apps to be published in Windows Phone Store and show on DVLUP.com. 
+You are responsible for ensuring that your apps are submitted on time. 
+There will be no time extension to this challenge.

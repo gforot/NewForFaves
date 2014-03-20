@@ -1,6 +1,6 @@
 ﻿using NewForFaves.Resources;
 
-namespace NewForFaves.Localization
+namespace NewForFaves
 {
     /// <summary>
     /// Provides access to string resources.

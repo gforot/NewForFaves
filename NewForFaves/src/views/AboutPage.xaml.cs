@@ -8,7 +8,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 
-namespace NewForFaves.src.view
+namespace NewForFaves.src.views
 {
     public partial class AboutPage : PhoneApplicationPage
     {

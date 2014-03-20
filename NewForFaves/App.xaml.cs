@@ -6,7 +6,6 @@ using System.Windows.Markup;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-using NewForFaves.Model;
 using NewForFaves.Resources;
 
 namespace NewForFaves
@@ -60,9 +59,8 @@ namespace NewForFaves
 
         // Code to execute when the application is launching (eg, from Start)
         // This code will not execute when the application is reactivated
-        private async void Application_Launching(object sender, LaunchingEventArgs e)
+        private void Application_Launching(object sender, LaunchingEventArgs e)
         {
-            await MusicClientAPI.GetInstance().Init();
         }
 
         // Code to execute when the application is activated (brought to foreground)

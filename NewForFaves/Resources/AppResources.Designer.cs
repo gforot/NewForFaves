@@ -61,6 +61,25 @@ namespace NewForFaves.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        public static string AboutPageTitle {
+            get {
+                return ResourceManager.GetString("AboutPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This application allow you to search for the new releases of an artist using Nokia Mix Radio.
+        ///Search a specific artists or select on of your favorite artists or from a list of &quot;top&quot; artists and get its new releases..
+        /// </summary>
+        public static string AboutText {
+            get {
+                return ResourceManager.GetString("AboutText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to add.
         /// </summary>
         public static string AppBarButtonText {
@@ -88,20 +107,20 @@ namespace NewForFaves.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Favorites.
-        /// </summary>
-        public static string Favorites {
-            get {
-                return ResourceManager.GetString("Favorites", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to New releases.
+        ///   Looks up a localized string similar to Main Page.
         /// </summary>
         public static string MainPageTitle {
             get {
                 return ResourceManager.GetString("MainPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Page 2.
+        /// </summary>
+        public static string PivotPage2 {
+            get {
+                return ResourceManager.GetString("PivotPage2", resourceCulture);
             }
         }
         
@@ -124,11 +143,20 @@ namespace NewForFaves.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Top.
+        ///   Looks up a localized string similar to Search.
         /// </summary>
-        public static string Top {
+        public static string Search {
             get {
-                return ResourceManager.GetString("Top", resourceCulture);
+                return ResourceManager.GetString("Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search Artist.
+        /// </summary>
+        public static string SearchArtistPivotPage {
+            get {
+                return ResourceManager.GetString("SearchArtistPivotPage", resourceCulture);
             }
         }
     }
