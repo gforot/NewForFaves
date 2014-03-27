@@ -29,7 +29,7 @@ namespace NewForFaves.Viewmodels
         }
         #endregion
 
-        public ObservableCollection<Artist> Artists { get; private set; } 
+        public ObservableCollection<ArtistNews> TopArtistsNews { get; private set; } 
 
         public RelayCommand SearchTopArtistsCommand { get; private set; }
 
@@ -37,7 +37,7 @@ namespace NewForFaves.Viewmodels
             : base(navigationService)
         {
             SearchTopArtistsCommand = new RelayCommand(SearchTopArtists, CanSearchTopArtists);
-            Artists = new ObservableCollection<Artist>();
+            TopArtistsNews = new ObservableCollection<ArtistNews>();
         }
 
         private bool CanSearchTopArtists()
@@ -47,12 +47,18 @@ namespace NewForFaves.Viewmodels
 
         private async void SearchTopArtists()
         {
+            TopArtistsNews.Clear();
             IEnumerable<Artist> topArtists = await MixRadioApi.GetInstance().SearchTopArtists(NumberOfTopArtistsToSearch);
 
-            Artists.Clear();
             foreach (Artist artist in topArtists)
             {
-                Artists.Add(artist);
+                ArtistNews artNews = new ArtistNews(artist);
+                IEnumerable<Product> prds = await MixRadioApi.GetInstance().SearchNewsForArtist(artist);
+                foreach (Product product in prds)
+                {
+                    artNews.AddProduct(product);
+                }
+                TopArtistsNews.Add(artNews);
             }
         }
     }

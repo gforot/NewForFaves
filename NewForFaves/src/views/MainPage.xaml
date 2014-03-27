@@ -72,14 +72,13 @@
                             />
                     </Grid>
                 </phone:PivotItem>
-                <phone:PivotItem DataContext="{Binding TopArtistsViewModel, Source={StaticResource Locator}}"  Header="{Binding Path=LocalizedResources.PivotPage2, Source={StaticResource LocalizedStrings}}">
+                <phone:PivotItem DataContext="{Binding TopArtistsViewModel, Source={StaticResource Locator}}"  Header="{Binding Path=LocalizedResources.TopArtistsPivotPage, Source={StaticResource LocalizedStrings}}">
                     <StackPanel>
                         <telerikInput:RadNumericUpDown Value="{Binding NumberOfTopArtistsToSearch, Mode=TwoWay}" />
                         <Button Command="{Binding SearchTopArtistsCommand}" Content="{Binding Path=LocalizedResources.Search, Source={StaticResource LocalizedStrings}}" />
                         <telerikPrimitives:RadDataBoundListBox  
-                            ItemTemplate="{StaticResource artistTemplate}" 
-                            ItemsSource="{Binding Artists}" 
-                            DoubleTap="ListBox_DoubleTap"
+                            ItemTemplate="{StaticResource artistNewsTemplate}" 
+                            ItemsSource="{Binding TopArtistsNews}" 
                             />
                     </StackPanel>
                 </phone:PivotItem>

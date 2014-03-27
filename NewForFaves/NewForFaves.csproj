@@ -96,6 +96,7 @@
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="src\model\Addresses.cs" />
     <Compile Include="src\model\AppHelper.cs" />
+    <Compile Include="src\model\ArtistNews.cs" />
     <Compile Include="src\model\Message.cs" />
     <Compile Include="src\model\MixRadioApi.cs" />
     <Compile Include="src\utils\Constants.cs" />

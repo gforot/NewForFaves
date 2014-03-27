@@ -144,8 +144,8 @@ Search a specific artists or select on of your favorite artists or from a list o
   <data name="SearchArtistPivotPage" xml:space="preserve">
     <value>Search Artist</value>
   </data>
-  <data name="PivotPage2" xml:space="preserve">
-    <value>Page 2</value>
+  <data name="TopArtistsPivotPage" xml:space="preserve">
+    <value>Top Artists</value>
   </data>
   <data name="MainPageTitle" xml:space="preserve">
     <value>Main Page</value>

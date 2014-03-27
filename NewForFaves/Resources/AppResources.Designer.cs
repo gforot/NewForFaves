@@ -116,15 +116,6 @@ namespace NewForFaves.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Page 2.
-        /// </summary>
-        public static string PivotPage2 {
-            get {
-                return ResourceManager.GetString("PivotPage2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Play mix.
         /// </summary>
         public static string PlayMix {
@@ -166,6 +157,15 @@ namespace NewForFaves.Resources {
         public static string SearchArtistPivotPage {
             get {
                 return ResourceManager.GetString("SearchArtistPivotPage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Top Artists.
+        /// </summary>
+        public static string TopArtistsPivotPage {
+            get {
+                return ResourceManager.GetString("TopArtistsPivotPage", resourceCulture);
             }
         }
     }

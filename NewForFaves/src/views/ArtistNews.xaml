@@ -34,8 +34,8 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <telerikPrimitives:RadDataBoundListBox 
-                ItemTemplate="{StaticResource newsTemplate}"
-                ItemsSource="{Binding NewsList}"
+                ItemTemplate="{StaticResource artistNewsTemplate}"
+                ItemsSource="{Binding ArtistNewsList}"
                 />
             <Button Grid.Row="1" Command="{Binding PlayMixCommand}" Content="{Binding Path=LocalizedResources.PlayMix, Source={StaticResource LocalizedStrings}}"></Button>
         </Grid>

@@ -20,6 +20,8 @@ namespace NewForFaves.Viewmodels
             }
         }
 
+        public ObservableCollection<ArtistNews> ArtistNewsList { get; set; }
+
         public ObservableCollection<Product> NewsList { get; set; }
 
 
