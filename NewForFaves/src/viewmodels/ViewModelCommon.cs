@@ -3,6 +3,8 @@ using Cimbalino.Phone.Toolkit.Services;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using NewForFaves.Model;
+using Nokia.Music.Types;
+
 
 namespace NewForFaves.Viewmodels
 {
@@ -31,6 +33,12 @@ namespace NewForFaves.Viewmodels
         private void NavigateToAboutPage()
         {
             NavigateToPage(Addresses.AboutPageAddress);
+        }
+
+        protected void NavigateToArtistNewsPage(Artist artist)
+        {
+            AppHelper.SelectedArtist = artist;
+            NavigateToPage(Addresses.ArtistNewsAddress);
         }
 
         private void NavigateToPage(string relativeUri)

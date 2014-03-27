@@ -22,7 +22,13 @@
         <Setter Property="FontWeight" Value="Thin" />
     </Style>
 
-    <Style x:Key="pageTitleStyle" BasedOn="{StaticResource textBlockStyleCommon}" TargetType="TextBlock">
+        <Style x:Key="newsTextBlockStyle" BasedOn="{StaticResource textBlockStyleCommon}" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="LemonChiffon" />
+            <Setter Property="FontSize" Value="22" />
+            <Setter Property="FontWeight" Value="Thin" />
+        </Style>
+
+        <Style x:Key="pageTitleStyle" BasedOn="{StaticResource textBlockStyleCommon}" TargetType="TextBlock">
         <Setter Property="Foreground" Value="SkyBlue" />
         <Setter Property="FontSize" Value="34" />
         <Setter Property="FontWeight" Value="SemiBold" />
@@ -33,8 +39,14 @@
                 <TextBlock Style="{StaticResource artistTextBlockStyle}" Text="{Binding Name}"></TextBlock>
         </StackPanel>
     </DataTemplate>
-      
-  </Application.Resources>
+
+    <DataTemplate x:Key="newsTemplate">
+        <StackPanel>
+            <TextBlock Style="{StaticResource newsTextBlockStyle}" Text="{Binding Name}"></TextBlock>
+        </StackPanel>
+    </DataTemplate>
+
+    </Application.Resources>
   <Application.ApplicationLifetimeObjects>
     <!--Required object that handles lifetime events for the application-->
     <shell:PhoneApplicationService Launching="Application_Launching" Closing="Application_Closing" Activated="Application_Activated" Deactivated="Application_Deactivated" />

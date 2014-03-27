@@ -33,6 +33,8 @@ namespace NewForFaves.Viewmodels
 
             SimpleIoc.Default.Register<MainPageViewModel>();
             SimpleIoc.Default.Register<SearchArtistViewModel>();
+            SimpleIoc.Default.Register<TopArtistsViewModel>();
+            SimpleIoc.Default.Register<ArtistNewsViewModel>();
 
             if (!SimpleIoc.Default.IsRegistered<INavigationService>())
             {
@@ -53,6 +55,22 @@ namespace NewForFaves.Viewmodels
             get
             {
                 return ServiceLocator.Current.GetInstance<SearchArtistViewModel>();
+            }
+        }
+
+        public TopArtistsViewModel TopArtistsViewModel
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<TopArtistsViewModel>();
+            }
+        }
+
+        public ArtistNewsViewModel ArtistNewsViewModel
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<ArtistNewsViewModel>();
             }
         }
 

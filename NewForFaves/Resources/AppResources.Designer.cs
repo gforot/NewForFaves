@@ -125,6 +125,15 @@ namespace NewForFaves.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Play mix.
+        /// </summary>
+        public static string PlayMix {
+            get {
+                return ResourceManager.GetString("PlayMix", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to LeftToRight.
         /// </summary>
         public static string ResourceFlowDirection {

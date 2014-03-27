@@ -10,7 +10,19 @@ namespace NewForFaves.Viewmodels
 {
     public class SearchArtistViewModel : ViewModelCommon
     {
-        public string ArtistName { get; set; }
+        private const string _artistNamePrpName = "ArtistName";
+        private string _artistName;
+        public string ArtistName { get
+        {
+            return _artistName;
+        }
+            set
+            {
+                _artistName = value;
+                RaisePropertyChanged(_artistNamePrpName);
+                SearchArtistCommand.RaiseCanExecuteChanged();
+            } 
+        }
         public RelayCommand SearchArtistCommand { get; private set; }
 
         public ObservableCollection<Artist> Artists { get; private set; } 
@@ -18,20 +30,20 @@ namespace NewForFaves.Viewmodels
         public SearchArtistViewModel(INavigationService navigationService)
             : base(navigationService)
         {
-            ArtistName = string.Empty;
-            Artists = new ObservableCollection<Artist>();
             SearchArtistCommand = new RelayCommand(SearchArtist, CanSearchArtist);
+            _artistName = string.Empty;
+            Artists = new ObservableCollection<Artist>();
         }
 
         private bool CanSearchArtist()
         {
-            return true;
+            return !string.IsNullOrEmpty(ArtistName);
         }
 
-        private void SearchArtist()
+        private async void SearchArtist()
         {
             //recupero da nokia api l'elenco degli artisti
-            IEnumerable<Artist> artists = MixRadioApi.GetInstance().SearchArtists(ArtistName);
+            IEnumerable<Artist> artists = await MixRadioApi.GetInstance().SearchArtists(ArtistName);
 
             //svuoto la lista di artisti precedentemente trovata
             Artists.Clear();

@@ -153,4 +153,7 @@ Search a specific artists or select on of your favorite artists or from a list o
   <data name="Search" xml:space="preserve">
     <value>Search</value>
   </data>
+  <data name="PlayMix" xml:space="preserve">
+    <value>Play mix</value>
+  </data>
 </root>

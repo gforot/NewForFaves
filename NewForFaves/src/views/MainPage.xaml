@@ -6,6 +6,8 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerikInput="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Input"
+    xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
     DataContext="{Binding MainPageViewModel, Source={StaticResource Locator}}"
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
@@ -62,11 +64,24 @@
                             <TextBox Text="{Binding ArtistName, Mode=TwoWay}" />
                             <Button Grid.Column="1" Command="{Binding SearchArtistCommand}" Content="{Binding Path=LocalizedResources.Search, Source={StaticResource LocalizedStrings}}" />
                         </Grid>
-                        <ListBox Grid.Row="1" ItemTemplate="{StaticResource artistTemplate}" ItemsSource="{Binding Artists}"></ListBox>
+                        <telerikPrimitives:RadDataBoundListBox 
+                            Grid.Row="1" 
+                                 ItemTemplate="{StaticResource artistTemplate}" 
+                                 ItemsSource="{Binding Artists}" DoubleTap="ListBox_DoubleTap"
+                                 
+                            />
                     </Grid>
                 </phone:PivotItem>
-                <phone:PivotItem Header="{Binding Path=LocalizedResources.PivotPage2, Source={StaticResource LocalizedStrings}}">
-
+                <phone:PivotItem DataContext="{Binding TopArtistsViewModel, Source={StaticResource Locator}}"  Header="{Binding Path=LocalizedResources.PivotPage2, Source={StaticResource LocalizedStrings}}">
+                    <StackPanel>
+                        <telerikInput:RadNumericUpDown Value="{Binding NumberOfTopArtistsToSearch, Mode=TwoWay}" />
+                        <Button Command="{Binding SearchTopArtistsCommand}" Content="{Binding Path=LocalizedResources.Search, Source={StaticResource LocalizedStrings}}" />
+                        <telerikPrimitives:RadDataBoundListBox  
+                            ItemTemplate="{StaticResource artistTemplate}" 
+                            ItemsSource="{Binding Artists}" 
+                            DoubleTap="ListBox_DoubleTap"
+                            />
+                    </StackPanel>
                 </phone:PivotItem>
             </phone:Pivot>
         </Grid>
