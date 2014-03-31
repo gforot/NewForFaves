@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using GalaSoft.MvvmLight.Command;
 using NewForFaves.Model;
+using Nokia.Music.Tasks;
 using Nokia.Music.Types;
 
 
@@ -35,7 +36,9 @@ namespace NewForFaves.Viewmodels
 
         private void PlayMix()
         {
-            throw new NotImplementedException();   
+            //PlayMixTask launcher = new PlayMixTask();
+            //launcher.ArtistName = SelectedArtist.Name;
+            SelectedArtist.PlayMix();
         }
 
         private async void OnMessageReceived(Message message)

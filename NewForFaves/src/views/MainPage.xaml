@@ -8,6 +8,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:telerikInput="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Input"
     xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
+    xmlns:cimbalino="clr-namespace:Cimbalino.Phone.Toolkit.Behaviors;assembly=Cimbalino.Phone.Toolkit"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
     DataContext="{Binding MainPageViewModel, Source={StaticResource Locator}}"
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
@@ -74,15 +76,23 @@
                 </phone:PivotItem>
                 <phone:PivotItem DataContext="{Binding TopArtistsViewModel, Source={StaticResource Locator}}"  Header="{Binding Path=LocalizedResources.TopArtistsPivotPage, Source={StaticResource LocalizedStrings}}">
                     <StackPanel>
-                        <telerikInput:RadNumericUpDown Value="{Binding NumberOfTopArtistsToSearch, Mode=TwoWay}" />
-                        <Button Command="{Binding SearchTopArtistsCommand}" Content="{Binding Path=LocalizedResources.Search, Source={StaticResource LocalizedStrings}}" />
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <telerikInput:RadNumericUpDown Value="{Binding NumberOfTopArtistsToSearch, Mode=TwoWay}" />
+                            <Button Command="{Binding SearchTopArtistsCommand}" Content="{Binding Path=LocalizedResources.Search, Source={StaticResource LocalizedStrings}}" Grid.Column="1" />
+                        </Grid>
                         <telerikPrimitives:RadDataBoundListBox  
                             ItemTemplate="{StaticResource artistNewsTemplate}" 
                             ItemsSource="{Binding TopArtistsNews}" 
                             />
                     </StackPanel>
+
                 </phone:PivotItem>
             </phone:Pivot>
+
         </Grid>
 
         <!--Uncomment to see an alignment grid to help ensure your controls are
@@ -92,6 +102,14 @@
 
             Before shipping remove this XAML and the image itself.-->
         <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
-    </Grid>
+        <i:Interaction.Behaviors>
+            <cimbalino:ApplicationBarBehavior>
+                <cimbalino:ApplicationBarIconButton Command="{Binding AboutCommand, Mode=OneTime}" 
+                                                    IconUri="/Assets/AppBar/questionmark.png" 
+                                                    Text="{Binding Path=LocalizedResources.AppBarAboutButtonTxt, Source={StaticResource LocalizedStrings}}" />
+            </cimbalino:ApplicationBarBehavior>
+        </i:Interaction.Behaviors>
 
+    </Grid>
+    
 </phone:PhoneApplicationPage>
