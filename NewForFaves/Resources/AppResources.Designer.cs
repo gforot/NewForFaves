@@ -107,7 +107,7 @@ namespace NewForFaves.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MY APPLICATION.
+        ///   Looks up a localized string similar to Music News.
         /// </summary>
         public static string ApplicationTitle {
             get {
@@ -121,6 +121,15 @@ namespace NewForFaves.Resources {
         public static string MainPageTitle {
             get {
                 return ResourceManager.GetString("MainPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No News for the artist.
+        /// </summary>
+        public static string NoNews {
+            get {
+                return ResourceManager.GetString("NoNews", resourceCulture);
             }
         }
         

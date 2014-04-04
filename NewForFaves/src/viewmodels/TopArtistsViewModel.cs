@@ -38,6 +38,63 @@ namespace NewForFaves.Viewmodels
         {
             SearchTopArtistsCommand = new RelayCommand(SearchTopArtists, CanSearchTopArtists);
             TopArtistsNews = new ObservableCollection<ArtistNews>();
+
+            if (IsInDesignMode)
+            {
+                TopArtistsNews = new ObservableCollection<ArtistNews>()
+                                 {
+                                     new ArtistNews(new Artist(){Name="Prova1"})
+                                     {
+                                         Products = new ObservableCollection<Product>()
+                                                    {
+                                                        new Product()
+                                                        {
+                                                            Name = "Prod 1"
+                                                        },
+                                                        new Product()
+                                                        {
+                                                            Name = "Prod 2"
+                                                        }
+                                                    }
+                                     },
+                                     new ArtistNews(new Artist(){Name="Prova2"})
+                                     {
+                                         Products = new ObservableCollection<Product>()
+                                     },
+                                     new ArtistNews(new Artist(){Name="Prova3"})
+                                     {
+                                         Products = new ObservableCollection<Product>()
+                                                    {
+                                                        new Product()
+                                                        {
+                                                            Name = "Prod 31"
+                                                        },
+                                                        new Product()
+                                                        {
+                                                            Name = "Prod 32"
+                                                        }
+                                                    }
+                                     },
+                                     new ArtistNews(new Artist(){Name="Prova4"})
+                                     {
+                                         Products = new ObservableCollection<Product>()
+                                                    {
+                                                        new Product()
+                                                        {
+                                                            Name = "Prod 41"
+                                                        },
+                                                        new Product()
+                                                        {
+                                                            Name = "Prod 42"
+                                                        },
+                                                        new Product()
+                                                        {
+                                                            Name = "Prod 43"
+                                                        }
+                                                    }
+                                     },
+                                 };
+            }
         }
 
         private bool CanSearchTopArtists()

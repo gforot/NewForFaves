@@ -1,13 +1,17 @@
 ﻿using System.Collections.ObjectModel;
+using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 using Nokia.Music.Types;
 
 
 namespace NewForFaves.Model
 {
-    public class ArtistNews
+    public class ArtistNews : ViewModelBase
     {
         public Artist Artist { get; private set; }
-        public ObservableCollection<Product> Products { get; private set; }
+        public ObservableCollection<Product> Products { get; set; }
+
+        public RelayCommand PlayMixCommand { get; private set; }
 
         public string ArtistName
         {
@@ -21,6 +25,8 @@ namespace NewForFaves.Model
         {
             this.Artist = artist;
             Products = new ObservableCollection<Product>();
+
+            PlayMixCommand = new RelayCommand(PlayMix);
         }
 
         public void AddProduct(Product p)
@@ -33,5 +39,14 @@ namespace NewForFaves.Model
             Products.Clear();
         }
 
+        private void PlayMix()
+        {
+            Artist.PlayMix();
+        }
+
+        public override string ToString()
+        {
+            return ArtistName;
+        }
     }
 }

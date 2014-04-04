@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
              xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone" 
              xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone" 
+             xmlns:converters="clr-namespace:NewForFaves.Converters"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              d1p1:Ignorable="d" 
              xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -13,8 +14,9 @@
   <Application.Resources>
     <local:LocalizedStrings xmlns:local="clr-namespace:NewForFaves" x:Key="LocalizedStrings" />
     <viewmodels:ViewModelLocator x:Key="Locator" d:IsDataSource="True" />
-      
-    <Style x:Key="textBlockStyleCommon" TargetType="TextBlock">
+    <converters:NewsToVisibilityConverter x:Key="newsToVisibilityConverter" />
+        <converters:HeightConverter x:Key="heightConverter" />
+        <Style x:Key="textBlockStyleCommon" TargetType="TextBlock">
         <Setter Property="FontFamily" Value="Palatino Linotype" />
     </Style>
 
@@ -49,13 +51,22 @@
     </DataTemplate>
 
     <DataTemplate x:Key="artistNewsTemplate">
-        <StackPanel>
-            <TextBlock Style="{StaticResource artistTextBlockStyle}" Text="{Binding ArtistName}" />
-            <telerikPrimitives:RadDataBoundListBox 
-                ItemTemplate="{StaticResource newsTemplate}"
-                ItemsSource="{Binding Products}"
-                />
-        </StackPanel>
+            <StackPanel>
+                <TextBlock Style="{StaticResource artistTextBlockStyle}" Text="{Binding ArtistName}" />
+                <!--<telerikPrimitives:RadDataBoundListBox 
+                    ItemTemplate="{StaticResource newsTemplate}"
+                    ItemsSource="{Binding Products}"
+                    />-->
+                <ListBox 
+                    ItemTemplate="{StaticResource newsTemplate}"
+                    ItemsSource="{Binding Products}"
+                    Visibility="{Binding Products, Converter={StaticResource newsToVisibilityConverter}, ConverterParameter=1}"
+                    />
+                <TextBlock Text="{Binding LocalizedResources.NoNews,Source={StaticResource LocalizedStrings}}"
+                    Visibility="{Binding Products, Converter={StaticResource newsToVisibilityConverter}, ConverterParameter=0}"
+                    />
+                <Button Content="{Binding Path=LocalizedResources.PlayMix, Source={StaticResource LocalizedStrings}}" Command="{Binding PlayMixCommand}" />
+            </StackPanel>
     </DataTemplate>
 
     </Application.Resources>

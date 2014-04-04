@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{56a63702-887b-4bfa-80bc-7d34ab3d48a4}" Title="NewForFaves" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="NewForFaves author" Description="Sample description" Publisher="NewForFaves" PublisherID="{d4fe0f09-d959-4b38-8d04-ac935ed3c80d}">
+  <App xmlns="" ProductID="{56a63702-887b-4bfa-80bc-7d34ab3d48a4}" Title="Music News" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="NewForFaves author" Description="Search for an artist or get a list of top artists and see their new releases and if you want you can play a mix of your favorite artist using Nokia Mix Radio App." Publisher="NewForFaves" PublisherID="{d4fe0f09-d959-4b38-8d04-ac935ed3c80d}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
@@ -16,9 +16,9 @@
     <Tokens>
       <PrimaryToken TokenID="NewForFavesToken" TaskName="_default">
         <TemplateFlip>
-          <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileSmall.png</SmallImageURI>
+          <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\star_yellow_159x159.png</SmallImageURI>
           <Count>0</Count>
-          <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileMedium.png</BackgroundImageURI>
+          <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\star_yellow_336x336.png</BackgroundImageURI>
           <Title>NewForFaves</Title>
           <BackContent>
           </BackContent>
@@ -26,10 +26,13 @@
           </BackBackgroundImageURI>
           <BackTitle>
           </BackTitle>
+          <LargeBackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\star_yellow_691x336.png</LargeBackgroundImageURI>
+          <LargeBackContent />
+          <LargeBackBackgroundImageURI IsRelative="true" IsResource="false">
+          </LargeBackBackgroundImageURI>
           <DeviceLockImageURI>
           </DeviceLockImageURI>
-          <HasLarge>
-          </HasLarge>
+          <HasLarge>True</HasLarge>
         </TemplateFlip>
       </PrimaryToken>
     </Tokens>

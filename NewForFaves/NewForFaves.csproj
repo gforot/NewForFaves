@@ -94,6 +94,8 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="LocalizedStrings.cs" />
+    <Compile Include="src\converters\HeightConverter.cs" />
+    <Compile Include="src\converters\NewsToVisibilityConverter.cs" />
     <Compile Include="src\model\Addresses.cs" />
     <Compile Include="src\model\AppHelper.cs" />
     <Compile Include="src\model\ArtistNews.cs" />
@@ -163,6 +165,9 @@
     <Content Include="Assets\Tiles\FlipCycleTileSmall.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\Tiles\star_yellow_159x159.png" />
+    <Content Include="Assets\Tiles\star_yellow_336x336.png" />
+    <Content Include="Assets\Tiles\star_yellow_691x336.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\AppResources.resx">
