@@ -22,7 +22,7 @@
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.Resources>
-            
+
         </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -92,11 +92,12 @@
                             ItemTemplate="{StaticResource artistNewsTemplate}" 
                             ItemsSource="{Binding TopArtistsNews}" 
                             />-->
-                        <ListBox
+                        <ListBox 
                             ItemTemplate="{StaticResource artistNewsTemplate}" 
                             ItemsSource="{Binding TopArtistsNews}" ScrollViewer.VerticalScrollBarVisibility="Visible" 
                             Height="{Binding ElementName=stkPanel, Path=ActualHeight, Mode=OneWay}"
                             >
+                            
                         </ListBox>
                     </StackPanel>
                 </phone:PivotItem>

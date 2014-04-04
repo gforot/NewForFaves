@@ -15,8 +15,9 @@
     <local:LocalizedStrings xmlns:local="clr-namespace:NewForFaves" x:Key="LocalizedStrings" />
     <viewmodels:ViewModelLocator x:Key="Locator" d:IsDataSource="True" />
     <converters:NewsToVisibilityConverter x:Key="newsToVisibilityConverter" />
-        <converters:HeightConverter x:Key="heightConverter" />
-        <Style x:Key="textBlockStyleCommon" TargetType="TextBlock">
+    <converters:HeightConverter x:Key="heightConverter" />
+    <converters:ImageVisibilityConverter x:Key="imageVisibilityConverter" />
+    <Style x:Key="textBlockStyleCommon" TargetType="TextBlock">
         <Setter Property="FontFamily" Value="Palatino Linotype" />
     </Style>
 
@@ -27,18 +28,22 @@
         <Setter Property="Margin" Value="5" />
     </Style>
 
-        <Style x:Key="newsTextBlockStyle" BasedOn="{StaticResource textBlockStyleCommon}" TargetType="TextBlock">
-            <Setter Property="Foreground" Value="LemonChiffon" />
-            <Setter Property="FontSize" Value="22" />
-            <Setter Property="FontWeight" Value="Thin" />
-        </Style>
+    <Style x:Key="newsTextBlockStyle" BasedOn="{StaticResource textBlockStyleCommon}" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="LemonChiffon" />
+        <Setter Property="FontSize" Value="22" />
+        <Setter Property="FontWeight" Value="Thin" />
+    </Style>
 
-        <Style x:Key="pageTitleStyle" BasedOn="{StaticResource textBlockStyleCommon}" TargetType="TextBlock">
+    <Style x:Key="pageTitleStyle" BasedOn="{StaticResource textBlockStyleCommon}" TargetType="TextBlock">
         <Setter Property="Foreground" Value="SkyBlue" />
         <Setter Property="FontSize" Value="34" />
         <Setter Property="FontWeight" Value="SemiBold" />
     </Style>
-      
+
+    <Style TargetType="ListBoxItem">
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+    </Style>
+
     <DataTemplate x:Key="artistTemplate">
         <StackPanel>
                 <TextBlock Style="{StaticResource artistTextBlockStyle}" Text="{Binding Name}"></TextBlock>
@@ -52,12 +57,21 @@
     </DataTemplate>
 
     <DataTemplate x:Key="artistNewsTemplate">
-            <StackPanel>
+            <StackPanel HorizontalAlignment="Stretch" Margin="3,5">
+                <StackPanel.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF2C3014" Offset="0"/>
+                        <GradientStop Color="#FFF0F9B9" Offset="1"/>
+                    </LinearGradientBrush>
+                </StackPanel.Background>
                 <TextBlock Style="{StaticResource artistTextBlockStyle}" Text="{Binding ArtistName}" />
                 <!--<telerikPrimitives:RadDataBoundListBox 
                     ItemTemplate="{StaticResource newsTemplate}"
                     ItemsSource="{Binding Products}"
                     />-->
+                <Image Width="100" Height="100" Source="{Binding Image}" 
+                       Visibility="{Binding Image, Converter={StaticResource imageVisibilityConverter}}" 
+                       />
                 <ListBox 
                     ItemTemplate="{StaticResource newsTemplate}"
                     ItemsSource="{Binding Products}"

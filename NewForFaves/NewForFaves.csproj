@@ -97,6 +97,7 @@
     <Compile Include="src\converters\HeightConverter.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="src\converters\ImageVisibilityConverter.cs" />
     <Compile Include="src\converters\NewsToVisibilityConverter.cs" />
     <Compile Include="src\model\Addresses.cs" />
     <Compile Include="src\model\AppHelper.cs" />

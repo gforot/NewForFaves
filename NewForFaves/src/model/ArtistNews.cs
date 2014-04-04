@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using NewForFaves.Tiles;
@@ -19,6 +20,14 @@ namespace NewForFaves.Model
             get
             {
                 return Artist.Name;
+            }
+        }
+
+        public Uri Image
+        {
+            get
+            {
+                return Artist.Thumb100Uri;
             }
         }
 
