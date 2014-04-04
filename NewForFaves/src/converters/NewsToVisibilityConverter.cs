@@ -12,6 +12,11 @@ namespace NewForFaves.Converters
     {
         public object Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
+            if (!(value is IEnumerable<Product>))
+            {
+                return Visibility.Visible;
+            }
+
             IEnumerable<Product> products = value as IEnumerable<Product>;
             string parString = (string)parameter;
 

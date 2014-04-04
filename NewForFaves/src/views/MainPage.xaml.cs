@@ -28,5 +28,30 @@ namespace NewForFaves.Views
 
             
         }
+
+        private void Pivot_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if ((e.AddedItems == null) || (e.AddedItems.Count == 0))
+            {
+                return;
+            }
+            if (e.AddedItems[0] is PivotItem)
+            {
+                bool isApplicationBarVisible = true;
+                if ((e.AddedItems[0] as PivotItem).Name.Equals("topArtists"))
+                {
+                    isApplicationBarVisible = false;
+                }
+                SetApplicationBarVisibility(isApplicationBarVisible);
+            }
+        }
+
+        private void SetApplicationBarVisibility(bool isVisible)
+        {
+            if (this.ApplicationBar != null)
+            {
+                this.ApplicationBar.IsVisible = isVisible;
+            }
+        }
     }
 }

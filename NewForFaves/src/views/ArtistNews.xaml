@@ -7,6 +7,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:behaviors="clr-namespace:Cimbalino.Phone.Toolkit.Behaviors;assembly=Cimbalino.Phone.Toolkit"
     DataContext="{Binding ArtistNewsViewModel, Source={StaticResource Locator}}"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -36,9 +38,20 @@
             <telerikPrimitives:RadDataBoundListBox 
                 ItemTemplate="{StaticResource artistNewsTemplate}"
                 ItemsSource="{Binding ArtistNewsList}"
+                Visibility="{Binding ArtistNewsList, Converter={StaticResource newsToVisibilityConverter}, ConverterParameter=1}"
                 />
+            <TextBlock Text="{Binding LocalizedResources.NoNews,Source={StaticResource LocalizedStrings}}"
+                    Visibility="{Binding ArtistNewsList, Converter={StaticResource newsToVisibilityConverter}, ConverterParameter=0}"
+                    />
             <Button Grid.Row="1" Command="{Binding PlayMixCommand}" Content="{Binding Path=LocalizedResources.PlayMix, Source={StaticResource LocalizedStrings}}"></Button>
         </Grid>
+        <i:Interaction.Behaviors>
+            <behaviors:ApplicationBarBehavior>
+                <behaviors:ApplicationBarIconButton Command="{Binding AboutCommand, Mode=OneTime}" 
+                                                    IconUri="/Assets/AppBar/questionmark.png" 
+                                                    Text="{Binding Path=LocalizedResources.AppBarAboutButtonTxt, Source={StaticResource LocalizedStrings}}" />
+            </behaviors:ApplicationBarBehavior>
+        </i:Interaction.Behaviors>
     </Grid>
 
 </phone:PhoneApplicationPage>

@@ -24,6 +24,7 @@
         <Setter Property="Foreground" Value="Orange" />
         <Setter Property="FontSize" Value="28" />
         <Setter Property="FontWeight" Value="Thin" />
+        <Setter Property="Margin" Value="5" />
     </Style>
 
         <Style x:Key="newsTextBlockStyle" BasedOn="{StaticResource textBlockStyleCommon}" TargetType="TextBlock">
