@@ -31,19 +31,10 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
             <telerikPrimitives:RadDataBoundListBox 
                 ItemTemplate="{StaticResource artistNewsTemplate}"
-                ItemsSource="{Binding ArtistNewsList}"
-                Visibility="{Binding ArtistNewsList, Converter={StaticResource newsToVisibilityConverter}, ConverterParameter=1}"
+                ItemsSource="{Binding ArtistNewses}"
                 />
-            <TextBlock Text="{Binding LocalizedResources.NoNews,Source={StaticResource LocalizedStrings}}"
-                    Visibility="{Binding ArtistNewsList, Converter={StaticResource newsToVisibilityConverter}, ConverterParameter=0}"
-                    />
-            <Button Grid.Row="1" Command="{Binding PlayMixCommand}" Content="{Binding Path=LocalizedResources.PlayMix, Source={StaticResource LocalizedStrings}}"></Button>
         </Grid>
         <i:Interaction.Behaviors>
             <behaviors:ApplicationBarBehavior>

@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using NewForFaves.Tiles;
 using Nokia.Music.Types;
 
 
@@ -23,7 +24,7 @@ namespace NewForFaves.Model
 
         public ArtistNews(Artist artist)
         {
-            this.Artist = artist;
+            Artist = artist;
             Products = new ObservableCollection<Product>();
 
             PlayMixCommand = new RelayCommand(PlayMix);
@@ -41,6 +42,9 @@ namespace NewForFaves.Model
 
         private void PlayMix()
         {
+            int numberOfNews = Products == null ? 0 : Products.Count;
+            TilesManager.UpdateTiles(Artist, numberOfNews);
+
             Artist.PlayMix();
         }
 

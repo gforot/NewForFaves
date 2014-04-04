@@ -12,13 +12,14 @@ namespace NewForFaves.Converters
     {
         public object Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
+            string parString = (string)parameter;
             if (!(value is IEnumerable<Product>))
             {
-                return Visibility.Visible;
+                return (parString == "0") ? Visibility.Collapsed : Visibility.Visible;
             }
 
             IEnumerable<Product> products = value as IEnumerable<Product>;
-            string parString = (string)parameter;
+            
 
             if (products.Count() > 0)
             {

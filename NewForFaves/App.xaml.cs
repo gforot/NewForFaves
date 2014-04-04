@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO.IsolatedStorage;
 using System.Resources;
 using System.Windows;
 using System.Windows.Markup;
@@ -7,6 +8,8 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using NewForFaves.Resources;
+using NewForFaves.Utils;
+
 
 namespace NewForFaves
 {
@@ -61,6 +64,17 @@ namespace NewForFaves
         // This code will not execute when the application is reactivated
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
+            IsolatedStorageSettings appSettings = IsolatedStorageSettings.ApplicationSettings;
+            AppAttributes.IsFirstUsageOfApp = true;
+            if (appSettings.Contains("alreadyUsed"))
+            {
+                AppAttributes.IsFirstUsageOfApp = false;
+            }
+            else
+            {
+                appSettings.Add("alreadyUsed", true);
+                appSettings.Save();
+            }
         }
 
         // Code to execute when the application is activated (brought to foreground)

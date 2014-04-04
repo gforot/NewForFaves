@@ -2,6 +2,8 @@
 using GalaSoft.MvvmLight.Messaging;
 using Microsoft.Phone.Controls;
 using NewForFaves.Model;
+using NewForFaves.Tiles;
+using NewForFaves.Utils;
 using Nokia.Music.Types;
 
 
@@ -13,6 +15,10 @@ namespace NewForFaves.Views
         public MainPage()
         {
             InitializeComponent();
+            if (AppAttributes.IsFirstUsageOfApp)
+            {
+                TilesManager.UpdateTiles();
+            }
         }
 
         private void ListBox_DoubleTap(object sender, System.Windows.Input.GestureEventArgs e)

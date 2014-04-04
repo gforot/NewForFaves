@@ -37,11 +37,16 @@ namespace NewForFaves.Viewmodels
 
         private bool CanSearchArtist()
         {
-            return !string.IsNullOrEmpty(ArtistName);
+            return true;
         }
 
         private async void SearchArtist()
         {
+            if (string.IsNullOrEmpty(ArtistName))
+            {
+                return;
+            }
+
             //recupero da nokia api l'elenco degli artisti
             IEnumerable<Artist> artists = await MixRadioApi.GetInstance().SearchArtists(ArtistName);
 

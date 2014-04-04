@@ -116,6 +116,33 @@ namespace NewForFaves.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No mix played.
+        /// </summary>
+        public static string BackTileMessage {
+            get {
+                return ResourceManager.GetString("BackTileMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No news available.
+        /// </summary>
+        public static string BackTileWideMessage {
+            get {
+                return ResourceManager.GetString("BackTileWideMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} news.
+        /// </summary>
+        public static string BackTileWideMessageFormat {
+            get {
+                return ResourceManager.GetString("BackTileWideMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Main Page.
         /// </summary>
         public static string MainPageTitle {

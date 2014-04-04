@@ -103,6 +103,8 @@
     <Compile Include="src\model\ArtistNews.cs" />
     <Compile Include="src\model\Message.cs" />
     <Compile Include="src\model\MixRadioApi.cs" />
+    <Compile Include="src\tiles\TilesManager.cs" />
+    <Compile Include="src\utils\AppAttributes.cs" />
     <Compile Include="src\utils\Constants.cs" />
     <Compile Include="src\viewmodels\ArtistNewsViewModel.cs" />
     <Compile Include="src\viewmodels\MainPageViewModel.cs" />

@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using GalaSoft.MvvmLight.Command;
 using NewForFaves.Model;
-using Nokia.Music.Tasks;
+using NewForFaves.Tiles;
 using Nokia.Music.Types;
 
 
@@ -21,9 +20,7 @@ namespace NewForFaves.Viewmodels
             }
         }
 
-        public ObservableCollection<ArtistNews> ArtistNewsList { get; set; }
-
-        public ObservableCollection<Product> NewsList { get; set; }
+        public ObservableCollection<ArtistNews> ArtistNewses { get; set; }
 
 
         public ArtistNewsViewModel()
@@ -31,11 +28,14 @@ namespace NewForFaves.Viewmodels
             PlayMixCommand = new RelayCommand(PlayMix);
 
             MessengerInstance.Register<Message>(this, OnMessageReceived);
-            NewsList = new ObservableCollection<Product>();
+            ArtistNewses = new ObservableCollection<ArtistNews>();
         }
 
         private void PlayMix()
         {
+            int numberOfNews = ((ArtistNewses == null) || (ArtistNewses.Count == 0)) ? 0 : ArtistNewses[0].Products.Count;
+            TilesManager.UpdateTiles(SelectedArtist, numberOfNews);
+
             //PlayMixTask launcher = new PlayMixTask();
             //launcher.ArtistName = SelectedArtist.Name;
             SelectedArtist.PlayMix();
@@ -43,15 +43,20 @@ namespace NewForFaves.Viewmodels
 
         private async void OnMessageReceived(Message message)
         {
+
             switch (message.Key)
             {
                 case Message.InitNews:
-                    NewsList.Clear();
+                    ArtistNewses.Clear();
+
+                    ArtistNews artistNews = new ArtistNews(SelectedArtist);
+
                     IEnumerable<Product> prs = await MixRadioApi.GetInstance().SearchNewsForArtist(SelectedArtist);
                     foreach (Product pr in prs)
                     {
-                        NewsList.Add(pr);
+                        artistNews.AddProduct(pr);
                     }
+                    ArtistNewses.Add(artistNews);
                     break;
             }
         }
